@@ -429,12 +429,62 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2023/08/07/HTTP%E5%8D%8F%E8%AE%AE/">
+                
+                <span class="abstract-title-text">HTTP</span>
+            </a>
+            <div class="abstract-content">
+                <h1 id="走进HTTP协议"><a href="#走进HTTP协议" class="headerlink" title="走进HTTP协议"></a>走进HTTP协议</h1><p>1.1 HTTP协议组成：</p>
+<ul>
+<li>请求行&#x2F;状态行：方法名、URL、协议版本&#x2F;协议版本、状态码、状态码描述</li>
+<li>请求头&#x2F;响应头</li>
+<li>请求体&#x2F;响应体</li>
+</ul>
+<p>1.2 请求流程<br>client使用框架提供API实现业务逻辑，进入到服务治理层，依托于中间件层，对每一个请求有先后处理逻辑，和请求级别绑定；进入协议编解码层，编译成server可以看懂的协议，通过传输层传输给server。server逻辑同理，在服务治理层和协议解码层之间多加路由层，根据URL提供handler，相当于定位特定server。</p>
+
+            </div>
+            <!-- read more -->
+            
+                <div class="abstract-read-more-button">
+                    <a href="/2023/08/07/HTTP%E5%8D%8F%E8%AE%AE/">
+                        <span style="margin-right: 0.2rem;">READ ARTICLE</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/08/07">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2023/08/04/Go/">
                 
                 <span class="abstract-title-text">Go</span>
             </a>
             <div class="abstract-content">
-                <h2 id="实战案例一：猜谜游戏"><a href="#实战案例一：猜谜游戏" class="headerlink" title="实战案例一：猜谜游戏"></a>实战案例一：猜谜游戏</h2><p>1. </p>
+                <h1 id="Go简单实践"><a href="#Go简单实践" class="headerlink" title="Go简单实践"></a>Go简单实践</h1><h2 id="实战案例一：猜谜游戏"><a href="#实战案例一：猜谜游戏" class="headerlink" title="实战案例一：猜谜游戏"></a>实战案例一：猜谜游戏</h2><p>1. </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   maxNum := 100</span><br><span class="line">rand.Seed(time.Now().UnixNano())</span><br><span class="line">secretNumber := rand.Intn(maxNum)</span><br><span class="line">fmt.Println(&quot;The secret number is &quot;, secretNumber)</span><br><span class="line"></span><br><span class="line">fmt.Println(&quot;Please input your guess&quot;)</span><br></pre></td></tr></table></figure>
 
 <p>使用**math&#x2F;rand&#x2F;**库：<code>rand.Seed(time.Now().UnixNano())</code>实现一个纳秒级更新的随机种子库；然后使用<code>rand.Intn()</code>函数实现随机数的生成。</p>
@@ -444,7 +494,6 @@
 <p>2. </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   reader := bufio.NewReader(os.Stdin)</span><br><span class="line">//for&#123;</span><br><span class="line">   input, err := reader.ReadString(&#x27;\n&#x27;)</span><br><span class="line">if err != nil &#123;</span><br><span class="line">	fmt.Println(&quot;An error occured while reading input. Please try again&quot;, err)</span><br><span class="line">	//continue</span><br><span class="line">&#125;</span><br><span class="line">input = strings.Trim(input, &quot;\r\n&quot;)</span><br><span class="line"></span><br><span class="line">   guess, err := strconv.Atoi(input)</span><br><span class="line">if err != nil &#123;</span><br><span class="line">	fmt.Println(&quot;Invalid input. Please enter an integer value&quot;)</span><br><span class="line">	//continue</span><br><span class="line">&#125;</span><br><span class="line">fmt.Println(&quot;You guess is&quot;, guess)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>使用<strong>bufio</strong>库：<code>reader=NewReader(os.Stdin)</code>创建一个新的对象，用于从标准输入端读入用户数据，即为reader；使用readString函数将输入放入变量Input中，碰到换行符就停止读入。如果存在错误信息（err不等于nil，相当于none），就打印错误提示并完成程序。<br>最后，在Input变量中只用<code>strings.trim</code>函数去除换行符和回车符，并且将输入字符串转化为整型变量guess。</p>
-<p>3. </p>
             </div>
             <!-- read more -->
             
@@ -457,7 +506,7 @@
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/08/05">
+                <div class="abstract-date" title="Last updated: 2023/08/07">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/04</span>
                 </div>
                 <!-- tags -->
@@ -695,7 +744,16 @@
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
         
         
         
@@ -764,7 +822,7 @@
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 12
+        Total : 13
         </div>
         <!-- search  -->
         
@@ -778,6 +836,12 @@
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/07</span>
+            <a class="archive-post-title" href="/2023/08/07/HTTP%E5%8D%8F%E8%AE%AE/">HTTP</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/04</span>
@@ -860,14 +924,14 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
         
-            <span class="sidebar-tag-name" data-tags="口水鸡真的很营养啊">
-                <span class="iconfont-archer">&#xe606;</span>
-                口水鸡真的很营养啊
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="学习">
                 <span class="iconfont-archer">&#xe606;</span>
                 学习
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="口水鸡真的很营养啊">
+                <span class="iconfont-archer">&#xe606;</span>
+                口水鸡真的很营养啊
             </span>
         
             <span class="sidebar-tag-name" data-tags="大一下">
