@@ -429,6 +429,58 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2023/08/04/Go/">
+                
+                <span class="abstract-title-text">Go</span>
+            </a>
+            <div class="abstract-content">
+                <h1 id="Go简单实践"><a href="#Go简单实践" class="headerlink" title="Go简单实践"></a>Go简单实践</h1><h2 id="实战案例一：猜谜游戏"><a href="#实战案例一：猜谜游戏" class="headerlink" title="实战案例一：猜谜游戏"></a>实战案例一：猜谜游戏</h2><p>1. </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   maxNum := 100</span><br><span class="line">rand.Seed(time.Now().UnixNano())</span><br><span class="line">secretNumber := rand.Intn(maxNum)</span><br><span class="line">fmt.Println(&quot;The secret number is &quot;, secretNumber)</span><br><span class="line"></span><br><span class="line">fmt.Println(&quot;Please input your guess&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>使用**math&#x2F;rand&#x2F;**库：<code>rand.Seed(time.Now().UnixNano())</code>实现一个纳秒级更新的随机种子库；然后使用<code>rand.Intn()</code>函数实现随机数的生成。</p>
+<blockquote>
+<p>rand.Intn(Number)函数是在一个左开右闭的区间内生成，rand.Int(Number)函数在一个全闭范围内生成。</p>
+</blockquote>
+<p>2. </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   reader := bufio.NewReader(os.Stdin)</span><br><span class="line">//for&#123;</span><br><span class="line">   input, err := reader.ReadString(&#x27;\n&#x27;)</span><br><span class="line">if err != nil &#123;</span><br><span class="line">	fmt.Println(&quot;An error occured while reading input. Please try again&quot;, err)</span><br><span class="line">	//continue</span><br><span class="line">&#125;</span><br><span class="line">input = strings.Trim(input, &quot;\r\n&quot;)</span><br><span class="line"></span><br><span class="line">   guess, err := strconv.Atoi(input)</span><br><span class="line">if err != nil &#123;</span><br><span class="line">	fmt.Println(&quot;Invalid input. Please enter an integer value&quot;)</span><br><span class="line">	//continue</span><br><span class="line">&#125;</span><br><span class="line">fmt.Println(&quot;You guess is&quot;, guess)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>使用<strong>bufio</strong>库：<code>reader=NewReader(os.Stdin)</code>创建一个新的对象，用于从标准输入端读入用户数据，即为reader；使用readString函数将输入放入变量Input中，碰到换行符就停止读入。如果存在错误信息（err不等于nil，相当于none），就打印错误提示并完成程序。<br>最后，在Input变量中只用<code>strings.trim</code>函数去除换行符和回车符，并且将输入字符串转化为整型变量guess。</p>
+            </div>
+            <!-- read more -->
+            
+                <div class="abstract-read-more-button">
+                    <a href="/2023/08/04/Go/">
+                        <span style="margin-right: 0.2rem;">READ ARTICLE</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/08/07">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/04</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2023/06/28/%E9%9A%8F%E7%AC%94%E8%AE%B0%E5%BD%95/">
                 
                 <span class="abstract-title-text">随笔记录</span>
@@ -820,50 +872,6 @@
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/04/11/%E4%B8%80%E5%88%87%E7%9A%84%E5%BC%80%E5%A7%8B/">
-                
-                <span class="abstract-title-text">一切的开始</span>
-            </a>
-            <div class="abstract-content">
-                <p>上个星期四花了大半天进行个人博客的搭建，但是因为自己倔非要用不同的主题而出bug不会解决遗憾告终。今天晚上终于二次尝试，一个小时就搭建出来了！那一瞬间的心情激动得难以言喻，连后面的MATLAB应用选修课都懒得听。趁热打铁换上自己心仪的主题，其实一切都不是那么难，前提是要首先熟悉好环境和教程文档，想清楚自己要怎么实施，不要一根筋一股脑上头又一败涂地。</p>
-<p>锵锵！！我的个人博客网站哦！希望以后的自己来看这个属于一切开始的自己会被可爱得笑出声，缓解缓解莫大的压力。</p>
-            </div>
-            <!-- read more -->
-            
-                <div class="abstract-read-more-button">
-                    <a href="/2023/04/11/%E4%B8%80%E5%88%87%E7%9A%84%E5%BC%80%E5%A7%8B/">
-                        <span style="margin-right: 0.2rem;">READ ARTICLE</span>
-                        <i class="fas fa-angle-right"></i>
-                    </a>
-                </div>
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/04/21">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/11</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="口水鸡真的很营养啊">口水鸡真的很营养啊</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
@@ -1083,7 +1091,18 @@
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1226,7 +1245,7 @@
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 21
+        Total : 22
         </div>
         <!-- search  -->
         
@@ -1240,6 +1259,12 @@
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/21</span>
+            <a class="archive-post-title" href="/2023/11/21/%E6%88%91%E8%A7%89%E5%BE%97%E6%88%91%E7%9A%84%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A%E5%86%99%E5%BE%97%E6%8C%BA%E5%A5%BD%E7%9A%84/">我觉得我的读书报告写得挺好的</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/09</span>
