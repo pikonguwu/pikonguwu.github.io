@@ -19,15 +19,15 @@
         <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="">
-    <meta name="description" content="网络打通互联网路由：同网段-SDN（网络虚拟化）；跨网段   路由不一定是对称的 路由工作在IP层，但不一定只在IP层  ARP协议    逻辑同网段才能发送ARP ARP请求广播，ARP应答单播 免费ARP：不用请求就可得知ARP地址，提前判断IP是否有冲突 ARP代理  IP协议：唯一标识，互联网通用Mac地址不能代替IP地址：二层协议有很多IPv4不够用，如何解决：NAT（家里路由器），内">
+    <meta name="description" content="下载 扫雷.cpp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="interact">
-<meta property="og:url" content="http://pikonguwu.github.io/2023/08/10/interact/index.html">
+<meta property="og:title" content="补档：扫雷游戏C语言实现">
+<meta property="og:url" content="http://pikonguwu.github.io/2023/12/26/%E8%A1%A5%E6%A1%A3%EF%BC%9A%E6%89%AB%E9%9B%B7%E6%B8%B8%E6%88%8FC%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="网络打通互联网路由：同网段-SDN（网络虚拟化）；跨网段   路由不一定是对称的 路由工作在IP层，但不一定只在IP层  ARP协议    逻辑同网段才能发送ARP ARP请求广播，ARP应答单播 免费ARP：不用请求就可得知ARP地址，提前判断IP是否有冲突 ARP代理  IP协议：唯一标识，互联网通用Mac地址不能代替IP地址：二层协议有很多IPv4不够用，如何解决：NAT（家里路由器），内">
+<meta property="og:description" content="下载 扫雷.cpp">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-08-10T08:17:21.000Z">
-<meta property="article:modified_time" content="2023-08-10T11:15:02.107Z">
+<meta property="article:published_time" content="2023-12-26T03:21:36.000Z">
+<meta property="article:modified_time" content="2023-12-26T03:40:08.966Z">
 <meta property="article:author" content="piekenius">
 <meta property="article:tag" content="学习">
 <meta name="twitter:card" content="summary">
@@ -35,7 +35,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="/assets/favicon.ico">
     
-    <title>interact · piekenius&#39; Blog</title>
+    <title>补档：扫雷游戏C语言实现 · piekenius&#39; Blog</title>
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -260,7 +260,7 @@
                 <a href="/">piekenius&#39; Blog</a>
             </div>
             <div class="post-title header-element">
-                <a href="#" class="post-name">interact</a>
+                <a href="#" class="post-name">补档：扫雷游戏C语言实现</a>
             </div>
         </div>
     
@@ -300,13 +300,13 @@
     <!-- 404页  -->
     
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/post1.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post2.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-                interact
+                补档：扫雷游戏C语言实现
             <!-- 404 -->
             
         </h1>
@@ -334,13 +334,13 @@
                 <!-- 文章字数统计 -->
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">644</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                        <span>Word count: <span class="post-count word-count">5</span>Reading time: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <!-- 撰写日期 -->
                     <span class="iconfont-archer post-intro-calander">&#xe676;</span>
-                    <span class="post-intro-time">2023/08/10</span>
+                    <span class="post-intro-time">2023/12/26</span>
                     <!-- busuanzi -->
                     
                         <span id="busuanzi_container_page_pv" class="busuanzi-pv">
@@ -495,85 +495,16 @@
             <div class="container container-unloaded">
                 <main class="main post-page">
     <article class="article-entry">
-        <ol>
-<li>网络打通<br>互联网<br>路由：同网段-SDN（网络虚拟化）；跨网段</li>
-</ol>
-<ul>
-<li>路由不一定是对称的</li>
-<li>路由工作在IP层，但不一定只在IP层</li>
-</ul>
-<p>ARP协议  </p>
-<ul>
-<li>逻辑同网段才能发送ARP</li>
-<li>ARP请求广播，ARP应答单播</li>
-<li>免费ARP：不用请求就可得知ARP地址，提前判断IP是否有冲突</li>
-<li>ARP代理</li>
-</ul>
-<p>IP协议：唯一标识，互联网通用<br>Mac地址不能代替IP地址：二层协议有很多<br>IPv4不够用，如何解决：NAT（家里路由器），内部用户通过NAT设备改源地址IP+端口，不同地址映射到一个地址进行联网</p>
-<ol start="2">
-<li>网络传输<br>数据包<br>数据包发送<br>先请求DNS：DNS协议UDP，递归请求<br>TCP三次握手</li>
-</ol>
-<ul>
-<li>Timewait？</li>
-<li>丢包怎么办？</li>
-<li>滑动窗口</li>
-<li>流量控制</li>
-</ul>
-<p>HTTP&#x2F;HTTP1.1    </p>
-<ul>
-<li>为什么不用TCP通信？关注代码本身，不用关注协议具体实现</li>
-<li>HTTP本质还是TCP，使用户更简洁</li>
-</ul>
-<p>HTTPS:解密出来仍然是HTTP</p>
-<p>SSL&#x2F;TLS握手：对称加密和非对称加密</p>
-<ol start="3">
-<li>网络架构<br>3.1 网络提速<br>HTTP2.0：多图并发下载<br>多路复用<br>HTTP3.0&#x2F;QUIC：</li>
-</ol>
-<ul>
-<li>TCP（对）&#x2F;UDP</li>
-<li>kernel&#x2F;userspace（√）</li>
-<li>0 RTT：本身支持HTTP协议</li>
-<li>弱网优势<br>数据中心分布<br>同运营商访问<br>动态API路径优化</li>
-</ul>
-<ol start="4">
-<li>网络提速优化<br>容灾：</li>
-</ol>
-<ul>
-<li>专线   </li>
-<li>外网</li>
-<li>自动化容灾系统</li>
-<li>SDK，云到端，主动降级容灾</li>
-</ul>
-<p>故障排查：故障明确-故障止损-故障排查</p>
-<p>dig；ping&#x2F;telnet&#x2F;nmap；traceroute；iptables；tcpdump</p>
-<pre><code>1. UDP socket实现ack，感知丢包重传
-- 学会UDP socket编程
-- 简单的ack&#39;学习，客户端等待ack再发包
-- 什么时候客户端认为是丢包
-- 重传怎么考虑效率
-- 能不能不阻塞只穿丢掉的中间的段
-2. 三台同网段内服务器，模拟实现一个路由器   
-    1. Linux操作系统配置
-    - 了解Linux路由配置方式
-    - 确保是同网段直连可达的环境。在三台机器上另外配置IP网段和路由。
-    - 一台机器做客户端，一台机器做路由器，一台机器做服务端
-    - 客户端配置到达服务器的下一跳指向路由器，路由器上配置到达服务器的路由
-    2. 用户态socket编程实现简易route软件
-    - 收到指定的包后，做转发
-    - 注意是修改报文的MAC，不是修改IP
-    - 实现一个对称路由，可以实现TCP交互
-    - 通过ping验证
-    - 可以支持traceroute么
-</code></pre>
+        <p><a href="/downloads/%E6%89%AB%E9%9B%B7.cpp">下载 扫雷.cpp</a></p>
 
     </article>
     <!-- license -->
     
         <div class="license-wrapper">
             <p>Author：<a href="http://pikonguwu.github.io">piekenius</a>
-            <p>Link：<a href="http://pikonguwu.github.io/2023/08/10/interact/">http://pikonguwu.github.io/2023/08/10/interact/</a>
-            <p>Publish date：<a href="http://pikonguwu.github.io/2023/08/10/interact/">August 10th 2023, 4:17:21 pm</a>
-            <p>Update date：<a href="http://pikonguwu.github.io/2023/08/10/interact/">August 10th 2023, 7:15:02 pm</a>
+            <p>Link：<a href="http://pikonguwu.github.io/2023/12/26/%E8%A1%A5%E6%A1%A3%EF%BC%9A%E6%89%AB%E9%9B%B7%E6%B8%B8%E6%88%8FC%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/">http://pikonguwu.github.io/2023/12/26/%E8%A1%A5%E6%A1%A3%EF%BC%9A%E6%89%AB%E9%9B%B7%E6%B8%B8%E6%88%8FC%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/</a>
+            <p>Publish date：<a href="http://pikonguwu.github.io/2023/12/26/%E8%A1%A5%E6%A1%A3%EF%BC%9A%E6%89%AB%E9%9B%B7%E6%B8%B8%E6%88%8FC%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/">December 26th 2023, 11:21:36 am</a>
+            <p>Update date：<a href="http://pikonguwu.github.io/2023/12/26/%E8%A1%A5%E6%A1%A3%EF%BC%9A%E6%89%AB%E9%9B%B7%E6%B8%B8%E6%88%8FC%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/">December 26th 2023, 11:40:08 am</a>
             <p>License：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -581,17 +512,12 @@
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2023/08/30/Death-Stranding/" title="Death Stranding">
-                    <div class="nextTitle">Death Stranding</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2023/08/07/HTTP/" title="HTTP">
-                    <div class="prevTitle">HTTP</div>
+                <a href="/2023/11/21/%E6%88%91%E8%A7%89%E5%BE%97%E6%88%91%E7%9A%84%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A%E5%86%99%E5%BE%97%E6%8C%BA%E5%A5%BD%E7%9A%84/" title="我觉得我的读书报告写得挺好的">
+                    <div class="prevTitle">我觉得我的读书报告写得挺好的</div>
                 </a>
             
         </li>
