@@ -429,179 +429,6 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2023/08/10/interact/">
-                
-                <span class="abstract-title-text">interact</span>
-            </a>
-            <div class="abstract-content">
-                <ol>
-<li>网络打通<br>互联网<br>路由：同网段-SDN（网络虚拟化）；跨网段</li>
-</ol>
-<ul>
-<li>路由不一定是对称的</li>
-<li>路由工作在IP层，但不一定只在IP层</li>
-</ul>
-<p>ARP协议  </p>
-<ul>
-<li>逻辑同网段才能发送ARP</li>
-<li>ARP请求广播，ARP应答单播</li>
-<li>免费ARP：不用请求就可得知ARP地址，提前判断IP是否有冲突</li>
-<li>ARP代理</li>
-</ul>
-<p>IP协议：唯一标识，互联网通用<br>Mac地址不能代替IP地址：二层协议有很多<br>IPv4不够用，如何解决：NAT（家里路由器），内部用户通过NAT设备改源地址IP+端口，不同地址映射到一个地址进行联网</p>
-<ol start="2">
-<li>网络传输<br>数据包<br>数据包发送<br>先请求DNS：DNS协议UDP，递归请求<br>TCP三次握手</li>
-</ol>
-<ul>
-<li>Timewait？</li>
-<li>丢包怎么办？</li>
-<li>滑动窗口</li>
-<li>流量控制</li>
-</ul>
-<p>HTTP&#x2F;HTTP1.1    </p>
-<ul>
-<li>为什么不用TCP通信？关注代码本身，不用关注协议具体实现</li>
-<li>HTTP本质还是TCP，使用户更简洁</li>
-</ul>
-            </div>
-            <!-- read more -->
-            
-                <div class="abstract-read-more-button">
-                    <a href="/2023/08/10/interact/">
-                        <span style="margin-right: 0.2rem;">READ ARTICLE</span>
-                        <i class="fas fa-angle-right"></i>
-                    </a>
-                </div>
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/08/10">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/10</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/08/07/HTTP/">
-                
-                <span class="abstract-title-text">HTTP</span>
-            </a>
-            <div class="abstract-content">
-                <h1 id="走进HTTP协议"><a href="#走进HTTP协议" class="headerlink" title="走进HTTP协议"></a>走进HTTP协议</h1><p>1.1 HTTP协议组成：</p>
-<ul>
-<li>请求行&#x2F;状态行：方法名、URL、协议版本&#x2F;协议版本、状态码、状态码描述</li>
-<li>请求头&#x2F;响应头</li>
-<li>请求体&#x2F;响应体</li>
-</ul>
-<p>1.2 请求流程<br>client使用框架提供API实现业务逻辑，进入到服务治理层，依托于中间件层，对每一个请求有先后处理逻辑，和请求级别绑定；进入协议编解码层，编译成server可以看懂的协议，通过传输层传输给server。server逻辑同理，在服务治理层和协议解码层之间多加路由层，根据URL提供handler，相当于定位特定server。</p>
-
-            </div>
-            <!-- read more -->
-            
-                <div class="abstract-read-more-button">
-                    <a href="/2023/08/07/HTTP/">
-                        <span style="margin-right: 0.2rem;">READ ARTICLE</span>
-                        <i class="fas fa-angle-right"></i>
-                    </a>
-                </div>
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/08/07">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/07</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/08/04/Go/">
-                
-                <span class="abstract-title-text">Go</span>
-            </a>
-            <div class="abstract-content">
-                <h1 id="Go简单实践"><a href="#Go简单实践" class="headerlink" title="Go简单实践"></a>Go简单实践</h1><h2 id="实战案例一：猜谜游戏"><a href="#实战案例一：猜谜游戏" class="headerlink" title="实战案例一：猜谜游戏"></a>实战案例一：猜谜游戏</h2><p>1. </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   maxNum := 100</span><br><span class="line">rand.Seed(time.Now().UnixNano())</span><br><span class="line">secretNumber := rand.Intn(maxNum)</span><br><span class="line">fmt.Println(&quot;The secret number is &quot;, secretNumber)</span><br><span class="line"></span><br><span class="line">fmt.Println(&quot;Please input your guess&quot;)</span><br></pre></td></tr></table></figure>
-
-<p>使用**math&#x2F;rand&#x2F;**库：<code>rand.Seed(time.Now().UnixNano())</code>实现一个纳秒级更新的随机种子库；然后使用<code>rand.Intn()</code>函数实现随机数的生成。</p>
-<blockquote>
-<p>rand.Intn(Number)函数是在一个左开右闭的区间内生成，rand.Int(Number)函数在一个全闭范围内生成。</p>
-</blockquote>
-<p>2. </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   reader := bufio.NewReader(os.Stdin)</span><br><span class="line">//for&#123;</span><br><span class="line">   input, err := reader.ReadString(&#x27;\n&#x27;)</span><br><span class="line">if err != nil &#123;</span><br><span class="line">	fmt.Println(&quot;An error occured while reading input. Please try again&quot;, err)</span><br><span class="line">	//continue</span><br><span class="line">&#125;</span><br><span class="line">input = strings.Trim(input, &quot;\r\n&quot;)</span><br><span class="line"></span><br><span class="line">   guess, err := strconv.Atoi(input)</span><br><span class="line">if err != nil &#123;</span><br><span class="line">	fmt.Println(&quot;Invalid input. Please enter an integer value&quot;)</span><br><span class="line">	//continue</span><br><span class="line">&#125;</span><br><span class="line">fmt.Println(&quot;You guess is&quot;, guess)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>使用<strong>bufio</strong>库：<code>reader=NewReader(os.Stdin)</code>创建一个新的对象，用于从标准输入端读入用户数据，即为reader；使用readString函数将输入放入变量Input中，碰到换行符就停止读入。如果存在错误信息（err不等于nil，相当于none），就打印错误提示并完成程序。<br>最后，在Input变量中只用<code>strings.trim</code>函数去除换行符和回车符，并且将输入字符串转化为整型变量guess。</p>
-            </div>
-            <!-- read more -->
-            
-                <div class="abstract-read-more-button">
-                    <a href="/2023/08/04/Go/">
-                        <span style="margin-right: 0.2rem;">READ ARTICLE</span>
-                        <i class="fas fa-angle-right"></i>
-                    </a>
-                </div>
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/08/07">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/04</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-            
-        
-        <article class="index-post">
             <a class="abstract-title" href="/2023/06/28/%E9%9A%8F%E7%AC%94%E8%AE%B0%E5%BD%95/">
                 
                 <span class="abstract-title-text">随笔记录</span>
@@ -760,53 +587,8 @@
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/05/17">
+                <div class="abstract-date" title="Last updated: 2024/01/18">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/05/17</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="大一下">大一下</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/05/04/%E9%80%89%E4%BF%AE%E8%AF%BE%E7%AC%94%E8%AE%B0/">
-                
-                <span class="abstract-title-text">选修课笔记</span>
-            </a>
-            <div class="abstract-content">
-                <h1 id="20230303-计算机视觉"><a href="#20230303-计算机视觉" class="headerlink" title="20230303 计算机视觉"></a>20230303 计算机视觉</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="人工智能体系"><a href="#人工智能体系" class="headerlink" title="人工智能体系"></a>人工智能体系</h3><p>应用层：NLP，CV，ASR语音识别，BI生物识别<br>技术层：概率和统计，模式识别，机器学习（包括深度学习）<br>基础层：云计算，大数据，芯片 </p>
-<h2 id="CV核心研究内容"><a href="#CV核心研究内容" class="headerlink" title="CV核心研究内容"></a>CV核心研究内容</h2><h3 id="图像分类：对未知图像类别进行预测"><a href="#图像分类：对未知图像类别进行预测" class="headerlink" title="图像分类：对未知图像类别进行预测"></a>图像分类：对未知图像类别进行预测</h3><p>框架：待测图像通过<strong>特征表示</strong>成为特征空间（矩阵），然后进行<strong>特征匹配</strong>到相应的类别空间。   </p>
-<h4 id="深度学习中的特征表示"><a href="#深度学习中的特征表示" class="headerlink" title="深度学习中的特征表示"></a>深度学习中的特征表示</h4><p>CNN（卷积神经网络）：卷积层，池化层和全连接层<br>卷积：输入端像素通过卷积核&#x2F;滤波器（已知矩阵）点乘相加得到输出相应位置一个像素（矩阵中组成元素）。<br>池化：分为最大池化和平均池化，类似于卷积。最大池化是将矩阵分块选择其中最大成为新矩阵元素，平均池化选平均值。<br>全连接层：连接上一层所有输出，通过特征加权方式确定类别。<br>常用CNN模型：AlexNet，VGG，ResNet</p>
-            </div>
-            <!-- read more -->
-            
-                <div class="abstract-read-more-button">
-                    <a href="/2023/05/04/%E9%80%89%E4%BF%AE%E8%AF%BE%E7%AC%94%E8%AE%B0/">
-                        <span style="margin-right: 0.2rem;">READ ARTICLE</span>
-                        <i class="fas fa-angle-right"></i>
-                    </a>
-                </div>
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/05/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/05/04</span>
                 </div>
                 <!-- tags -->
                 
@@ -908,10 +690,181 @@
         </article>
         <div class="index-post-divider"></div>
     
+        
+        
+        
+        
+            
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2023/04/14/20230414%E7%9A%84%E6%9A%B4%E8%B5%B0/">
+                
+                <span class="abstract-title-text">20230414的暴走</span>
+            </a>
+            <div class="abstract-content">
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=27896321&auto=1&height=66"></iframe>
+
+<p>现在是20230416的下午17：24分，距离无意义的出行经过了差不多48+3小时。  </p>
+            </div>
+            <!-- read more -->
+            
+                <div class="abstract-read-more-button">
+                    <a href="/2023/04/14/20230414%E7%9A%84%E6%9A%B4%E8%B5%B0/">
+                        <span style="margin-right: 0.2rem;">READ ARTICLE</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/08/30">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/14</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="口水鸡真的很营养啊">口水鸡真的很营养啊</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2023/04/12/%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E6%B5%8B%E8%AF%95post/">
+                
+                <span class="abstract-title-text">这是一个测试post</span>
+            </a>
+            <div class="abstract-content">
+                <h1 id="first-head"><a href="#first-head" class="headerlink" title="first head"></a>first head</h1><p>this is a test sentence.</p>
+<p>  this is another test sentences.</p>
+<h2 id="second-head"><a href="#second-head" class="headerlink" title="second head"></a>second head</h2><p>can you switch the row?<br>i can.</p>
+<h3 id="third-head"><a href="#third-head" class="headerlink" title="third head"></a>third head</h3><p>tomorrow i am gonna to do some learning for <em><strong>front programme</strong></em></p>
+<p><strong>PAINFUL</strong></p>
+<h4 id="forth-head"><a href="#forth-head" class="headerlink" title="forth head"></a>forth head</h4>
+            </div>
+            <!-- read more -->
+            
+                <div class="abstract-read-more-button">
+                    <a href="/2023/04/12/%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E6%B5%8B%E8%AF%95post/">
+                        <span style="margin-right: 0.2rem;">READ ARTICLE</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/04/16">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/12</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2023/04/11/%E4%B8%80%E5%88%87%E7%9A%84%E5%BC%80%E5%A7%8B/">
+                
+                <span class="abstract-title-text">一切的开始</span>
+            </a>
+            <div class="abstract-content">
+                <p>上个星期四花了大半天进行个人博客的搭建，但是因为自己倔非要用不同的主题而出bug不会解决遗憾告终。今天晚上终于二次尝试，一个小时就搭建出来了！那一瞬间的心情激动得难以言喻，连后面的MATLAB应用选修课都懒得听。趁热打铁换上自己心仪的主题，其实一切都不是那么难，前提是要首先熟悉好环境和教程文档，想清楚自己要怎么实施，不要一根筋一股脑上头又一败涂地。</p>
+<p>锵锵！！我的个人博客网站哦！希望以后的自己来看这个属于一切开始的自己会被可爱得笑出声，缓解缓解莫大的压力。</p>
+            </div>
+            <!-- read more -->
+            
+                <div class="abstract-read-more-button">
+                    <a href="/2023/04/11/%E4%B8%80%E5%88%87%E7%9A%84%E5%BC%80%E5%A7%8B/">
+                        <span style="margin-right: 0.2rem;">READ ARTICLE</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/04/21">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/11</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="口水鸡真的很营养啊">口水鸡真的很营养啊</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2023/04/11/hello-world/">
+                
+                <span class="abstract-title-text">Hello World</span>
+            </a>
+            <div class="abstract-content">
+                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3>
+            </div>
+            <!-- read more -->
+            
+                <div class="abstract-read-more-button">
+                    <a href="/2023/04/11/hello-world/">
+                        <span style="margin-right: 0.2rem;">READ ARTICLE</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/04/11">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/11</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
         </nav>
     
 </main>
@@ -1122,57 +1075,7 @@
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         
@@ -1315,7 +1218,7 @@
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 24
+        Total : 20
         </div>
         <!-- search  -->
         
@@ -1346,12 +1249,6 @@
             
         
         <li class="archive-post-item">
-            <span class="archive-post-date">12/26</span>
-            <a class="archive-post-title" href="/2023/12/26/%E8%A1%A5%E6%A1%A3%EF%BC%9A%E6%89%AB%E9%9B%B7%E6%B8%B8%E6%88%8FC%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/">补档：扫雷游戏C语言实现</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
             <span class="archive-post-date">11/21</span>
             <a class="archive-post-title" href="/2023/11/21/%E6%88%91%E8%A7%89%E5%BE%97%E6%88%91%E7%9A%84%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A%E5%86%99%E5%BE%97%E6%8C%BA%E5%A5%BD%E7%9A%84/">我觉得我的读书报告写得挺好的</a>
         </li>
@@ -1366,12 +1263,6 @@
         <li class="archive-post-item">
             <span class="archive-post-date">10/22</span>
             <a class="archive-post-title" href="/2023/10/22/%E6%88%91%E4%B8%8E%E5%8F%B2%E9%93%81%E7%94%9F%E4%B8%8E%E4%BB%96%E7%9A%84%E5%9C%B0%E5%9D%9B/">我与史铁生与他的地坛</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/13</span>
-            <a class="archive-post-title" href="/2023/10/13/%E7%89%A9%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%AE%BA%E7%AC%94%E8%AE%B0/">物联网技术导论笔记</a>
         </li>
     
         
@@ -1406,12 +1297,6 @@
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">08/07</span>
-            <a class="archive-post-title" href="/2023/08/07/HTTP/">HTTP</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
             <span class="archive-post-date">08/04</span>
             <a class="archive-post-title" href="/2023/08/04/Go/">Go</a>
         </li>
@@ -1438,12 +1323,6 @@
         <li class="archive-post-item">
             <span class="archive-post-date">05/17</span>
             <a class="archive-post-title" href="/2023/05/17/oj%E9%80%9A%E8%BF%87%E4%B9%8B%E5%90%8E/">oj通过之后</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/04</span>
-            <a class="archive-post-title" href="/2023/05/04/%E9%80%89%E4%BF%AE%E8%AF%BE%E7%AC%94%E8%AE%B0/">选修课笔记</a>
         </li>
     
         
