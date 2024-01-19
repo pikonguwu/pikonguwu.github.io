@@ -429,6 +429,58 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2023/08/04/Go/">
+                
+                <span class="abstract-title-text">Go</span>
+            </a>
+            <div class="abstract-content">
+                <h1 id="Go简单实践"><a href="#Go简单实践" class="headerlink" title="Go简单实践"></a>Go简单实践</h1><h2 id="实战案例一：猜谜游戏"><a href="#实战案例一：猜谜游戏" class="headerlink" title="实战案例一：猜谜游戏"></a>实战案例一：猜谜游戏</h2><p>1. </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   maxNum := 100</span><br><span class="line">rand.Seed(time.Now().UnixNano())</span><br><span class="line">secretNumber := rand.Intn(maxNum)</span><br><span class="line">fmt.Println(&quot;The secret number is &quot;, secretNumber)</span><br><span class="line"></span><br><span class="line">fmt.Println(&quot;Please input your guess&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>使用**math&#x2F;rand&#x2F;**库：<code>rand.Seed(time.Now().UnixNano())</code>实现一个纳秒级更新的随机种子库；然后使用<code>rand.Intn()</code>函数实现随机数的生成。</p>
+<blockquote>
+<p>rand.Intn(Number)函数是在一个左开右闭的区间内生成，rand.Int(Number)函数在一个全闭范围内生成。</p>
+</blockquote>
+<p>2. </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   reader := bufio.NewReader(os.Stdin)</span><br><span class="line">//for&#123;</span><br><span class="line">   input, err := reader.ReadString(&#x27;\n&#x27;)</span><br><span class="line">if err != nil &#123;</span><br><span class="line">	fmt.Println(&quot;An error occured while reading input. Please try again&quot;, err)</span><br><span class="line">	//continue</span><br><span class="line">&#125;</span><br><span class="line">input = strings.Trim(input, &quot;\r\n&quot;)</span><br><span class="line"></span><br><span class="line">   guess, err := strconv.Atoi(input)</span><br><span class="line">if err != nil &#123;</span><br><span class="line">	fmt.Println(&quot;Invalid input. Please enter an integer value&quot;)</span><br><span class="line">	//continue</span><br><span class="line">&#125;</span><br><span class="line">fmt.Println(&quot;You guess is&quot;, guess)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>使用<strong>bufio</strong>库：<code>reader=NewReader(os.Stdin)</code>创建一个新的对象，用于从标准输入端读入用户数据，即为reader；使用readString函数将输入放入变量Input中，碰到换行符就停止读入。如果存在错误信息（err不等于nil，相当于none），就打印错误提示并完成程序。<br>最后，在Input变量中只用<code>strings.trim</code>函数去除换行符和回车符，并且将输入字符串转化为整型变量guess。</p>
+            </div>
+            <!-- read more -->
+            
+                <div class="abstract-read-more-button">
+                    <a href="/2023/08/04/Go/">
+                        <span style="margin-right: 0.2rem;">READ ARTICLE</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/08/07">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/04</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2023/06/28/%E9%9A%8F%E7%AC%94%E8%AE%B0%E5%BD%95/">
                 
                 <span class="abstract-title-text">随笔记录</span>
@@ -819,52 +871,10 @@
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/04/11/hello-world/">
-                
-                <span class="abstract-title-text">Hello World</span>
-            </a>
-            <div class="abstract-content">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3>
-            </div>
-            <!-- read more -->
-            
-                <div class="abstract-read-more-button">
-                    <a href="/2023/04/11/hello-world/">
-                        <span style="margin-right: 0.2rem;">READ ARTICLE</span>
-                        <i class="fas fa-angle-right"></i>
-                    </a>
-                </div>
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/04/11">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/11</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
+            <a class="extend prev" rel="prev" href="/archives/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1075,7 +1085,24 @@
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1214,7 +1241,7 @@
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 20
+        Total : 21
         </div>
         <!-- search  -->
         
@@ -1228,6 +1255,12 @@
             <div class="archive-year"> 2024 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/19</span>
+            <a class="archive-post-title" href="/2024/01/19/%E5%A6%99%E7%AC%94%E7%94%9F%E8%8A%B1/">。</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">01/11</span>
