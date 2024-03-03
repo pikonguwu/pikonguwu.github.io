@@ -19,22 +19,25 @@
         <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="Go简单实践实战案例一：猜谜游戏1.  123456   maxNum :&#x3D; 100rand.Seed(time.Now().UnixNano())secretNumber :&#x3D; rand.Intn(maxNum)fmt.Println(&quot;The secret number is &quot;, secretNumber)fmt.Println(&quot;Please input yo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://pikonguwu.github.io/2023/04/11/hello-world/index.html">
+<meta property="og:title" content="Go">
+<meta property="og:url" content="http://pikonguwu.github.io/2023/08/04/10/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Go简单实践实战案例一：猜谜游戏1.  123456   maxNum :&#x3D; 100rand.Seed(time.Now().UnixNano())secretNumber :&#x3D; rand.Intn(maxNum)fmt.Println(&quot;The secret number is &quot;, secretNumber)fmt.Println(&quot;Please input yo">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-04-11T11:39:15.234Z">
-<meta property="article:modified_time" content="2023-04-11T11:39:15.234Z">
+<meta property="og:image" content="http://pikonguwu.github.io/study/image.png">
+<meta property="article:published_time" content="2023-08-04T06:41:20.000Z">
+<meta property="article:modified_time" content="2023-08-07T14:53:02.907Z">
 <meta property="article:author" content="piekenius">
+<meta property="article:tag" content="学习">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://pikonguwu.github.io/study/image.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="/assets/favicon.ico">
     
-    <title>Hello World · piekenius&#39; Blog</title>
+    <title>Go · piekenius&#39; Blog</title>
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -259,7 +262,7 @@
                 <a href="/">piekenius&#39; Blog</a>
             </div>
             <div class="post-title header-element">
-                <a href="#" class="post-name">Hello World</a>
+                <a href="#" class="post-name">Go</a>
             </div>
         </div>
     
@@ -305,7 +308,7 @@
         <h1 class="intro-title">
             <!-- 主页  -->
             
-                Hello World
+                Go
             <!-- 404 -->
             
         </h1>
@@ -325,19 +328,21 @@
                     <div class= post-intro-tags >
     
     
+        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
+    
 </div>
 
                 
                 <!-- 文章字数统计 -->
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">75</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">2.6k</span>Reading time: <span class="post-count reading-time">11 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <!-- 撰写日期 -->
                     <span class="iconfont-archer post-intro-calander">&#xe676;</span>
-                    <span class="post-intro-time">2023/04/11</span>
+                    <span class="post-intro-time">2023/08/04</span>
                     <!-- busuanzi -->
                     
                         <span id="busuanzi_container_page_pv" class="busuanzi-pv">
@@ -492,28 +497,210 @@
             <div class="container container-unloaded">
                 <main class="main post-page">
     <article class="article-entry">
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <h1 id="Go简单实践"><a href="#Go简单实践" class="headerlink" title="Go简单实践"></a>Go简单实践</h1><h2 id="实战案例一：猜谜游戏"><a href="#实战案例一：猜谜游戏" class="headerlink" title="实战案例一：猜谜游戏"></a>实战案例一：猜谜游戏</h2><p>1. </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   maxNum := 100</span><br><span class="line">rand.Seed(time.Now().UnixNano())</span><br><span class="line">secretNumber := rand.Intn(maxNum)</span><br><span class="line">fmt.Println(&quot;The secret number is &quot;, secretNumber)</span><br><span class="line"></span><br><span class="line">fmt.Println(&quot;Please input your guess&quot;)</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>使用**math&#x2F;rand&#x2F;**库：<code>rand.Seed(time.Now().UnixNano())</code>实现一个纳秒级更新的随机种子库；然后使用<code>rand.Intn()</code>函数实现随机数的生成。</p>
+<blockquote>
+<p>rand.Intn(Number)函数是在一个左开右闭的区间内生成，rand.Int(Number)函数在一个全闭范围内生成。</p>
+</blockquote>
+<p>2. </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   reader := bufio.NewReader(os.Stdin)</span><br><span class="line">//for&#123;</span><br><span class="line">   input, err := reader.ReadString(&#x27;\n&#x27;)</span><br><span class="line">if err != nil &#123;</span><br><span class="line">	fmt.Println(&quot;An error occured while reading input. Please try again&quot;, err)</span><br><span class="line">	//continue</span><br><span class="line">&#125;</span><br><span class="line">input = strings.Trim(input, &quot;\r\n&quot;)</span><br><span class="line"></span><br><span class="line">   guess, err := strconv.Atoi(input)</span><br><span class="line">if err != nil &#123;</span><br><span class="line">	fmt.Println(&quot;Invalid input. Please enter an integer value&quot;)</span><br><span class="line">	//continue</span><br><span class="line">&#125;</span><br><span class="line">fmt.Println(&quot;You guess is&quot;, guess)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>使用<strong>bufio</strong>库：<code>reader=NewReader(os.Stdin)</code>创建一个新的对象，用于从标准输入端读入用户数据，即为reader；使用readString函数将输入放入变量Input中，碰到换行符就停止读入。如果存在错误信息（err不等于nil，相当于none），就打印错误提示并完成程序。<br>最后，在Input变量中只用<code>strings.trim</code>函数去除换行符和回车符，并且将输入字符串转化为整型变量guess。</p>
+<p>3. </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if guess &gt; secretNumber &#123;</span><br><span class="line">	fmt.Println(&quot;Your guess is bigger than the secret number. Please try again&quot;)</span><br><span class="line">&#125; else if guess &lt; secretNumber &#123;</span><br><span class="line">	fmt.Println(&quot;Your guess is smaller than the secret number. Please try again&quot;)</span><br><span class="line">&#125; else &#123;</span><br><span class="line">	fmt.Println(&quot;Correct, you Legend!&quot;)</span><br><span class="line">       //break</span><br><span class="line">&#125;</span><br><span class="line">   //&#125;</span><br></pre></td></tr></table></figure>
+<p>加上判断，完成一次程序。需要多次输入，我们需要for循环。</p>
+<blockquote>
+<p>该程序所用到的go库为：bufio，fmt，math&#x2F;rand，os(os.Stdin)，strconv，strings，time</p>
+</blockquote>
+<h2 id="实战案例二：在线词典"><a href="#实战案例二：在线词典" class="headerlink" title="实战案例二：在线词典"></a>实战案例二：在线词典</h2><blockquote>
+<p>http通信包括：请求方法-请求头-请求体-响应-响应状态码-读取响应体-错误处理</p>
+</blockquote>
+<ol>
+<li>首先在需要连接的网页中获取cURL并编写http请求代码如下（使用curlconverter.com）进行代码生成.</li>
+<li>由于请求体需要的数据不局限于以上代码，则需要使用json序列化来实现请求体的变化。</li>
+<li>通过oktools.net生成结构体代码解析response</li>
+<li>输出相应的音标，解释等。将在线词典功能封装为一个函数；在主函数中读取命令行中的参数，载入word，运行程序。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">		&quot;bytes&quot;</span><br><span class="line">		&quot;encoding/json&quot;</span><br><span class="line">        &quot;fmt&quot;</span><br><span class="line">        &quot;io/ioutil&quot;</span><br><span class="line">        &quot;log&quot;</span><br><span class="line">        &quot;net/http&quot;</span><br><span class="line">		&quot;os&quot;</span><br><span class="line">)</span><br><span class="line">//通过json序列化 实现请求体的变化</span><br><span class="line">type DictRequest struct&#123;</span><br><span class="line">	Transtype string `json:&quot;trans_type&quot;`</span><br><span class="line">	Source    string `json:&quot;source&quot;`</span><br><span class="line">&#125;</span><br><span class="line">//解析response</span><br><span class="line">type DictResponse struct &#123;</span><br><span class="line">		Rc int `json:&quot;rc&quot;`</span><br><span class="line">		Wiki struct &#123;</span><br><span class="line">		&#125; `json:&quot;wiki&quot;`</span><br><span class="line">		Dictionary struct &#123;</span><br><span class="line">			Prons struct &#123;</span><br><span class="line">				EnUs string `json:&quot;en-us&quot;`</span><br><span class="line">				En string `json:&quot;en&quot;`</span><br><span class="line">			&#125; `json:&quot;prons&quot;`</span><br><span class="line">			Explanations []string `json:&quot;explanations&quot;`</span><br><span class="line">			Synonym []string `json:&quot;synonym&quot;`</span><br><span class="line">			Antonym []string `json:&quot;antonym&quot;`</span><br><span class="line">			WqxExample [][]string `json:&quot;wqx_example&quot;`</span><br><span class="line">			Entry string `json:&quot;entry&quot;`</span><br><span class="line">			Type string `json:&quot;type&quot;`</span><br><span class="line">			Related []interface&#123;&#125; `json:&quot;related&quot;`</span><br><span class="line">			Source string `json:&quot;source&quot;`</span><br><span class="line">		&#125; `json:&quot;dictionary&quot;`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func query(word string)&#123;</span><br><span class="line">	client := &amp;http.Client&#123;&#125; //创建一个http客户端，用于发送给http请求</span><br><span class="line">	request:=DictRequest&#123;Transtype:&quot;en2zh&quot;,Source:word&#125;</span><br><span class="line">	buf,err:=json.Marshal(request)</span><br><span class="line">	if err!=nil&#123;</span><br><span class="line">		log.Fatal(err)</span><br><span class="line">	&#125;</span><br><span class="line">	var data=bytes.NewReader(buf)</span><br><span class="line">	req, err := http.NewRequest(&quot;POST&quot;, &quot;https://api.interpreter.caiyunai.com/v1/dict&quot;, data)   //创建一个http post请求实例，被发送至中间该地址</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		log.Fatal(err)</span><br><span class="line">	&#125;</span><br><span class="line">	//各式各样的请求头</span><br><span class="line">	req.Header.Set(&quot;authority&quot;, &quot;api.interpreter.caiyunai.com&quot;)</span><br><span class="line">	req.Header.Set(&quot;accept&quot;, &quot;application/json, text/plain, */*&quot;)</span><br><span class="line">	req.Header.Set(&quot;accept-language&quot;, &quot;zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6&quot;)</span><br><span class="line">	req.Header.Set(&quot;app-name&quot;, &quot;xy&quot;)</span><br><span class="line">	req.Header.Set(&quot;content-type&quot;, &quot;application/json;charset=UTF-8&quot;)</span><br><span class="line">	req.Header.Set(&quot;device-id&quot;, &quot;6434127fee6f4eed253afdc2e6dc8683&quot;)</span><br><span class="line">	req.Header.Set(&quot;origin&quot;, &quot;https://fanyi.caiyunapp.com&quot;)</span><br><span class="line">	req.Header.Set(&quot;os-type&quot;, &quot;web&quot;)</span><br><span class="line">	req.Header.Set(&quot;os-version&quot;, &quot;&quot;)</span><br><span class="line">	req.Header.Set(&quot;referer&quot;, &quot;https://fanyi.caiyunapp.com/&quot;)</span><br><span class="line">	req.Header.Set(&quot;sec-ch-ua&quot;, `&quot;Not/A)Brand&quot;;v=&quot;99&quot;, &quot;Microsoft Edge&quot;;v=&quot;115&quot;, &quot;Chromium&quot;;v=&quot;115&quot;`)</span><br><span class="line">	req.Header.Set(&quot;sec-ch-ua-mobile&quot;, &quot;?0&quot;)</span><br><span class="line">	req.Header.Set(&quot;sec-ch-ua-platform&quot;, `&quot;Windows&quot;`)</span><br><span class="line">	req.Header.Set(&quot;sec-fetch-dest&quot;, &quot;empty&quot;)</span><br><span class="line">	req.Header.Set(&quot;sec-fetch-mode&quot;, &quot;cors&quot;)</span><br><span class="line">	req.Header.Set(&quot;sec-fetch-site&quot;, &quot;cross-site&quot;)</span><br><span class="line">	req.Header.Set(&quot;user-agent&quot;, &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.188&quot;)</span><br><span class="line">	req.Header.Set(&quot;x-authorization&quot;, &quot;token:qgemv4jr1y38jyq6vhvi&quot;)</span><br><span class="line"></span><br><span class="line">	resp, err := client.Do(req)   //发送http请求并等待响应</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">			log.Fatal(err)</span><br><span class="line">	&#125;   //出现错误则打印错误结果并终止程序</span><br><span class="line">	defer resp.Body.Close()   //延迟关闭响应的主体</span><br><span class="line">	bodyText, err := ioutil.ReadAll(resp.Body)   //读取相应主体的内容</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">			log.Fatal(err)</span><br><span class="line">	&#125;   //错误则</span><br><span class="line">	var dictResponse DictResponse</span><br><span class="line">	err=json.Unmarshal(bodyText,&amp;dictResponse)</span><br><span class="line">	if err!=nil&#123;</span><br><span class="line">		log.Fatal(err)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(word, &quot;UK:&quot;, dictResponse.Dictionary.Prons.En, &quot;US:&quot;, dictResponse.Dictionary.Prons.EnUs)</span><br><span class="line">	for _,item:=range dictResponse.Dictionary.Explanations&#123;</span><br><span class="line">		fmt.Println(item)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;   //遍历切片，忽略下标值，输出每一个解释</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	if len(os.Args)!=2&#123;   //`os.Args`是一个字符串切片，检查命令行参数的数量是否等于2</span><br><span class="line">		fmt.Fprintf(os.Stderr, `usage: simpleDict WORD</span><br><span class="line">example:simpleDict hello</span><br><span class="line">		`)   //如果命令行参数数量不等於2，将说明信息打印到标准错误输出（stderr），`os.stderr`表示标准错误输出流</span><br><span class="line">		os.Exit(1)  //终止程序执行，返回1（非零的状态码表示程序异常终止）</span><br><span class="line">	&#125;</span><br><span class="line">	word:=os.Args[1]   //读取命令行的第二个参数（下标为1）</span><br><span class="line">	query(word)  </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>我真的要疯了.jpg之实战案例三：socks5代理，完全听不懂，大哥。</p>
+<h1 id="Go语言进阶与依赖管理"><a href="#Go语言进阶与依赖管理" class="headerlink" title="Go语言进阶与依赖管理"></a>Go语言进阶与依赖管理</h1><ol>
+<li><p>并发（多线程单核√）与并行（多线程多核）   </p>
+<ol>
+<li>Goroutine：协程（√）&#x2F;线程   </li>
+<li>CSP：通过通信实现并发处理，而不共享数据   </li>
+<li>Channel   </li>
+<li>并发安全 Lock   </li>
+<li>waitgroup</li>
+</ol>
+</li>
+<li><p>依赖管理    </p>
+<ol>
+<li>依赖管理演进：GOPATH-Go Vender-Go Module</li>
+<li>依赖管理三要素    <ol>
+<li>配置文件，描述依赖（go.mod）    <ol>
+<li>依赖管理基本单元，原生库，单元依赖     </li>
+<li>version：语义化&#x2F;commit伪版本    </li>
+<li>indirect间接依赖    </li>
+<li>incompatible</li>
+</ol>
+</li>
+<li>依赖分发-Proxy    </li>
+<li>本地工具 go mod：init，download，tidy</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h1 id="Go语言工程实践之测试"><a href="#Go语言工程实践之测试" class="headerlink" title="Go语言工程实践之测试"></a>Go语言工程实践之测试</h1><ol>
+<li>单元测试</li>
+</ol>
+<ul>
+<li>_test.go结尾</li>
+<li>func TestXxx(*testing.T)</li>
+<li>初始化逻辑放到TestMain中：测试前准备工作；测试后的收尾工作</li>
+<li>testify&#x2F;assert包可实现结果的equal&#x2F;notequal</li>
+<li>代码覆盖率</li>
+<li>依赖</li>
+<li>mock</li>
+</ul>
+<ol start="2">
+<li><p>基准测试</p>
+</li>
+<li><p>设置一个简单的社区话题页面</p>
+<ol>
+<li><p>需求：    </p>
+<ul>
+<li>展示话题（标题，文字描述）和回帖列表</li>
+<li>实现一个本地web服务</li>
+<li>话题和回帖数据用文件存储</li>
+</ul>
+</li>
+<li><p>ER图</p>
+</li>
+<li><p>分层结构<br> File-数据层-逻辑层-视图层-Client</p>
+</li>
+</ol>
+</li>
+</ol>
+<h1 id="高质量编程及编码规范"><a href="#高质量编程及编码规范" class="headerlink" title="高质量编程及编码规范"></a>高质量编程及编码规范</h1><ol>
+<li><p>编码规范 </p>
+<ol>
+<li>简单性、可读性、生产力    </li>
+<li>编码规范   <ol>
+<li>代码格式：gofmt自动格式化代码&#x2F;goimprts&#x3D;gofmt+依赖包管理   </li>
+<li>注释：代码作用、如何做的、实现原因、什么情况会出错<br> · 公共符号始终要注释   </li>
+<li>命名规范：</li>
+</ol>
+<ul>
+<li>variable<ul>
+<li>缩略词全大写，位于变量开头且不需要导出时，使用全小写</li>
+<li>全局变量需要在名字中提供更多上下文信息<br> function    </li>
+<li>不携带包名的上下文信息</li>
+<li>当名为foo的包某个函数返回类型Foo时，可以省略类型信息而不出现歧义</li>
+<li>当名为foo的包某个函数返回类型T时，可以在函数名中加入类型信息</li>
+</ul>
+</li>
+<li>package<ul>
+<li>只有小写字母组成</li>
+<li>不与标准库同名</li>
+<li>不适用常用变量名作为包名</li>
+<li>使用单数而不是复数</li>
+<li>谨慎使用缩写</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>控制流程<ul>
+<li>避免嵌套</li>
+</ul>
+</li>
+<li>错误和异常处理   <ul>
+<li>简单错误：优先使用errors.New(string)创建匿名变量直接表示简单错误；如果有格式化要求，使用fmt.Errorf</li>
+<li>错误的Wrap（包装）和Unwrap（解包装）：提供一个error嵌套另一个error，生成error的跟踪链；在fmt.Errorf中使用%w来将一个错误关联至错误链中    </li>
+<li>错误判定：判定一个错误是否为特定错误，使用error.ls，可以判断错误链上的所有错误是否含有特定错误；使用errors.As在错误链上获取特定种类的错误</li>
+<li>panic：不建议</li>
+<li>recover：只能在被defer的函数中使用；嵌套无法生效；只在当前goroutine生效；defer的语句是后进先出。如果需要更多上下文信息，可以recover后在log中记录当前的调用栈</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>性能优化建议   </p>
+<ol>
+<li>Benchmark<code>go test -bench=. -benchmen</code>   </li>
+<li>Slice预分配内存；大内存未释放（copy代替re-slice）    </li>
+<li>Map预分配内存   </li>
+<li>字符串处理：使用strings.Builder&#x2F;strings.Buffer做字符串拼接    </li>
+<li>空结构体：节省内存   </li>
+<li>atomic包：效率比锁高；sync.Mutex应该用来保护一段逻辑而不是保护一个变量；对于非数值操作，而可以使用atomic.Value</li>
+</ol>
+</li>
+<li><p>性能调优   </p>
+<ol>
+<li>性能分析工具pprof：可视化和分析性能分析数据，可以知道程序在什么地方耗费了多少CPU、Memory<br><a target="_blank" rel="noopener" href="https://github.com/wolfogre/go-pprof-practice">https://github.com/wolfogre/go-pprof-practice</a>   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">go tool pprof &quot;http://localhost:6060/debug/pprof/profile?seconds=10&quot;   //进入pprof</span><br><span class="line">top         //查看占用资源最多的函数</span><br><span class="line">list 关键字  //查找代码行</span><br><span class="line">web         //调用关系可视化</span><br><span class="line">go tool pprof -http=:8080 &quot;http://localhost:6060/debug/pprof/heap&quot;  //处理堆内存问题</span><br></pre></td></tr></table></figure>
+<img src="/study/image.png" alt="Mindmap"></li>
+</ol>
+</li>
+<li><p>性能调优案例   </p>
+<ol>
+<li>业务服务优化</li>
+</ol>
+<ul>
+<li>建立服务性能评估手段   </li>
+<li>服务性能评估方式   </li>
+<li>请求流量构造   </li>
+<li>压测范围   <ul>
+<li>单机器压测   </li>
+<li>集群压测</li>
+</ul>
+</li>
+<li>性能数据采集   <ul>
+<li>单机性能数据   </li>
+<li>集群性能数据</li>
+</ul>
+</li>
+<li>分析性能数据（使用库不规范、高并发场景优化不足…）    </li>
+<li>重点优化项改造（diff）    </li>
+<li>优化效果验证<ul>
+<li>重复压测验证   </li>
+<li>上限评估优化结果：关注服务监控、逐步放量、收集性能数据</li>
+</ul>
+</li>
+<li>进一步优化，服务整体链路分析   <ul>
+<li>规范上有服务调用接口   </li>
+<li>分析链路，提升服务性能</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>基础库优化</li>
+</ol>
+<ul>
+<li>AB实验SDK优化<ul>
+<li>设计完善改造方案、数据按需获取、数据序列协议优化   </li>
+<li>内部压测验证   </li>
+<li>对光业务服务落地验证</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>Go语言优化</li>
+</ol>
+<ul>
+<li>编译器优化：内存分配、代码编译流程、内部压测验证、推广业务服务落地验证</li>
+</ul>
+</li>
+</ol>
 
     </article>
     <!-- license -->
     
         <div class="license-wrapper">
             <p>Author：<a href="http://pikonguwu.github.io">piekenius</a>
-            <p>Link：<a href="http://pikonguwu.github.io/2023/04/11/hello-world/">http://pikonguwu.github.io/2023/04/11/hello-world/</a>
-            <p>Publish date：<a href="http://pikonguwu.github.io/2023/04/11/hello-world/">April 11th 2023, 7:39:15 pm</a>
-            <p>Update date：<a href="http://pikonguwu.github.io/2023/04/11/hello-world/">April 11th 2023, 7:39:15 pm</a>
+            <p>Link：<a href="http://pikonguwu.github.io/2023/08/04/10/">http://pikonguwu.github.io/2023/08/04/10/</a>
+            <p>Publish date：<a href="http://pikonguwu.github.io/2023/08/04/10/">August 4th 2023, 2:41:20 pm</a>
+            <p>Update date：<a href="http://pikonguwu.github.io/2023/08/04/10/">August 7th 2023, 10:53:02 pm</a>
             <p>License：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -522,12 +709,17 @@
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href="/2023/04/11/1/" title="一切的开始">
-                    <div class="nextTitle">一切的开始</div>
+                <a href="/2023/08/10/11/" title="interact">
+                    <div class="nextTitle">interact</div>
                 </a>
             
         </li>
         <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2023/06/28/9/" title="随笔记录">
+                    <div class="prevTitle">随笔记录</div>
+                </a>
             
         </li>
     </ul>
@@ -688,7 +880,7 @@
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Go%E7%AE%80%E5%8D%95%E5%AE%9E%E8%B7%B5"><span class="toc-number">1.</span> <span class="toc-text">Go简单实践</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E6%88%98%E6%A1%88%E4%BE%8B%E4%B8%80%EF%BC%9A%E7%8C%9C%E8%B0%9C%E6%B8%B8%E6%88%8F"><span class="toc-number">1.1.</span> <span class="toc-text">实战案例一：猜谜游戏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E6%88%98%E6%A1%88%E4%BE%8B%E4%BA%8C%EF%BC%9A%E5%9C%A8%E7%BA%BF%E8%AF%8D%E5%85%B8"><span class="toc-number">1.2.</span> <span class="toc-text">实战案例二：在线词典</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Go%E8%AF%AD%E8%A8%80%E8%BF%9B%E9%98%B6%E4%B8%8E%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">Go语言进阶与依赖管理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Go%E8%AF%AD%E8%A8%80%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E4%B9%8B%E6%B5%8B%E8%AF%95"><span class="toc-number">3.</span> <span class="toc-text">Go语言工程实践之测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%AB%98%E8%B4%A8%E9%87%8F%E7%BC%96%E7%A8%8B%E5%8F%8A%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83"><span class="toc-number">4.</span> <span class="toc-text">高质量编程及编码规范</span></a></li></ol>
             </div>
         
         <!-- sidebar -->
