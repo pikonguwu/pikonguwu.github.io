@@ -444,6 +444,49 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2024/04/14/25/">
+                
+                <span class="abstract-title-text">幸好今天是大雾</span>
+            </a>
+            <div class="abstract-content">
+                <p>幸好今天是大雾，所以没必要看日出。</p>
+            </div>
+            <!-- read more -->
+            
+                <div class="abstract-read-more-button">
+                    <a href="/2024/04/14/25/">
+                        <span style="margin-right: 0.2rem;">READ ARTICLE</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/04/14">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2024/04/14</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="口水鸡真的很营养啊">口水鸡真的很营养啊</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2024/04/07/24/">
                 
                 <span class="abstract-title-text">回答</span>
@@ -909,95 +952,6 @@
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/09/15/15/">
-                
-                <span class="abstract-title-text">数据结构与算法笔记</span>
-            </a>
-            <div class="abstract-content">
-                <p>[数据结构所有实验代码+教材]<a target="_blank" rel="noopener" href="http://s7gq6sfjj.hb-bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95.rar">http://s7gq6sfjj.hb-bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95.rar</a></p>
-<p>[数据结构作业代码]<a target="_blank" rel="noopener" href="http://s9oboycr5.hb-bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%9C%E4%B8%9A%E6%89%80%E6%9C%89%E4%BB%A3%E7%A0%81">http://s9oboycr5.hb-bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%9C%E4%B8%9A%E6%89%80%E6%9C%89%E4%BB%A3%E7%A0%81</a></p>
-<h1 id="2023-09-13-第一次作业"><a href="#2023-09-13-第一次作业" class="headerlink" title="2023&#x2F;09&#x2F;13 第一次作业"></a>2023&#x2F;09&#x2F;13 第一次作业</h1><h2 id="分治思想处理最大子序列"><a href="#分治思想处理最大子序列" class="headerlink" title="分治思想处理最大子序列"></a>分治思想处理最大子序列</h2><p>核心思想就是二分法无限不断持续细分，用递归来实现，把每一个细分板块都看作独立的数列处理：</p>
-<pre><code>int Maxsequence(int array[],int left,int right)&#123;
-    int center,i;
-    int maxleftsum,maxrightsum;   //左半边最大子序列&amp;右半边最大子序列
-    int leftsum,mleftsum,rightsum,mrightsum;   //两边分别处理  
-    if (left==right)&#123;    //基础情况：只有一个元素
-        return array[left];
-    &#125;
-    //先判断完成基础情况再进行递归
-    center=(left+right)/2;     
-    maxleftsum=Maxsequence(array,left,center);    //递归左半边
-    maxrightsum=Maxsequence(array,center+1,right);  //递归右半边
-    leftsum=0;mleftsum=0;  //别忘了初始化
-    for (i=left;i&lt;=center;i++)&#123;
-        leftsum+=array[i];
-        if (leftsum&gt;mleftsum)&#123;
-            mleftsum=leftsum;
-        &#125;
-    &#125;
-    rightsum=0;mrightsum=0;
-    for (i=center+1;i&lt;=right;i++)&#123;
-        rightsum+=array[i];
-        if (rightsum&gt;mrightsum)&#123;
-            mrightsum=rightsum;
-        &#125;
-    &#125;
-    return max3(maxleftsum,maxrightsum,mrightsum+mleftsum);   //左半边最大子序列、右半边最大子序列和中间最大子序列（发现规律得来）
-    &#125;
-</code></pre>
-<h2 id="动态规划处理最大子序列"><a href="#动态规划处理最大子序列" class="headerlink" title="动态规划处理最大子序列"></a>动态规划处理最大子序列</h2><p>从开头开始，和是正数就继续遍历，是负数就归零</p>
-<pre><code>int online-maxsequence(int array[],int n)&#123;
-    int sum=0,maxsum=0;
-    int i;
-    for (i=0;i&lt;n;i++)&#123;
-        sum+=array[i];  
-        if (sum&gt;maxsum)
-            maxsum=sum;
-        if (sum&lt;0)   //换个角度和为负数则归零
-        sum=0;
-        if (array[i]&gt;maxsum)
-        maxsum=array[i]; 
-    &#125;
-    return maxsum;
-&#125;
-</code></pre>
-            </div>
-            <!-- read more -->
-            
-                <div class="abstract-read-more-button">
-                    <a href="/2023/09/15/15/">
-                        <span style="margin-right: 0.2rem;">READ ARTICLE</span>
-                        <i class="fas fa-angle-right"></i>
-                    </a>
-                </div>
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/03/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/09/15</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
@@ -1343,31 +1297,12 @@
         
         
         
+        
+        
+        
+        
+        
     
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         
@@ -1530,7 +1465,7 @@
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 25
+        Total : 26
         </div>
         <!-- search  -->
         
@@ -1544,6 +1479,12 @@
             <div class="archive-year"> 2024 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/14</span>
+            <a class="archive-post-title" href="/2024/04/14/25/">幸好今天是大雾</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/07</span>
@@ -1713,14 +1654,14 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
         
-            <span class="sidebar-tag-name" data-tags="学习">
-                <span class="iconfont-archer">&#xe606;</span>
-                学习
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="口水鸡真的很营养啊">
                 <span class="iconfont-archer">&#xe606;</span>
                 口水鸡真的很营养啊
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="学习">
+                <span class="iconfont-archer">&#xe606;</span>
+                学习
             </span>
         
             <span class="sidebar-tag-name" data-tags="大一下">
