@@ -429,6 +429,50 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2024/10/28/27/">
+                
+                <span class="abstract-title-text">Code for Winter Hacker</span>
+            </a>
+            <div class="abstract-content">
+                <p>This is the code for winter hacker. Also feel free to visit any place of my Blog^^</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># Color ranges for laser pointers (covering common colors such as red, green, and blue)</span></span><br><span class="line">COLOR_RANGES = &#123;</span><br><span class="line">    <span class="string">&#x27;red&#x27;</span>: (np.array([<span class="number">160</span>, <span class="number">100</span>, <span class="number">100</span>]), np.array([<span class="number">180</span>, <span class="number">255</span>, <span class="number">255</span>])),   <span class="comment"># Red</span></span><br><span class="line">    <span class="string">&#x27;green&#x27;</span>: (np.array([<span class="number">40</span>, <span class="number">70</span>, <span class="number">70</span>]), np.array([<span class="number">80</span>, <span class="number">255</span>, <span class="number">255</span>])),     <span class="comment"># Green</span></span><br><span class="line">    <span class="string">&#x27;blue&#x27;</span>: (np.array([<span class="number">100</span>, <span class="number">150</span>, <span class="number">0</span>]), np.array([<span class="number">140</span>, <span class="number">255</span>, <span class="number">255</span>]))     <span class="comment"># Blue</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Initialize the camera</span></span><br><span class="line">cap = cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="comment"># Read a frame</span></span><br><span class="line">    ret, frame = cap.read()</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> ret:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Convert to HSV color space</span></span><br><span class="line">    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> color_name, (lower, upper) <span class="keyword">in</span> COLOR_RANGES.items():</span><br><span class="line">        <span class="comment"># Apply color thresholds to create a mask</span></span><br><span class="line">        mask = cv2.inRange(hsv, lower, upper)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Use morphological opening to remove small noise</span></span><br><span class="line">        kernel = np.ones((<span class="number">5</span>, <span class="number">5</span>), np.uint8)</span><br><span class="line">        mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Apply Gaussian blur to smooth the mask</span></span><br><span class="line">        blurred = cv2.GaussianBlur(mask, (<span class="number">15</span>, <span class="number">15</span>), <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Find contours</span></span><br><span class="line">        contours, _ = cv2.findContours(blurred, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Iterate through contours</span></span><br><span class="line">        <span class="keyword">for</span> contour <span class="keyword">in</span> contours:</span><br><span class="line">            area = cv2.contourArea(contour)</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># Filter out noise based on area</span></span><br><span class="line">            <span class="keyword">if</span> area &gt; <span class="number">50</span>:  <span class="comment"># Adjust the area threshold based on experimentation to filter out noise</span></span><br><span class="line">                <span class="comment"># Get the smallest enclosing circle</span></span><br><span class="line">                (x, y), radius = cv2.minEnclosingCircle(contour)</span><br><span class="line">                center = (<span class="built_in">int</span>(x), <span class="built_in">int</span>(y))</span><br><span class="line">                radius = <span class="built_in">int</span>(radius)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># Calculate the distance (assuming calibration through actual measurement)</span></span><br><span class="line">                distance = <span class="number">200</span> / (radius + <span class="number">1</span>)  <span class="comment"># Adjust the formula based on experimental results</span></span><br><span class="line"></span><br><span class="line">                <span class="comment"># Check if within the valid distance range</span></span><br><span class="line">                <span class="keyword">if</span> <span class="number">190</span> &lt;= distance &lt;= <span class="number">210</span>:</span><br><span class="line">                    <span class="comment"># Draw different colors for laser spots of different colors</span></span><br><span class="line">                    color = (<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>) <span class="keyword">if</span> color_name == <span class="string">&#x27;green&#x27;</span> <span class="keyword">else</span> (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>) <span class="keyword">if</span> color_name == <span class="string">&#x27;blue&#x27;</span> <span class="keyword">else</span> (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>)</span><br><span class="line">                    </span><br><span class="line">                    <span class="comment"># Draw a circular marker and color label on the frame</span></span><br><span class="line">                    cv2.circle(frame, center, radius, color, <span class="number">2</span>)</span><br><span class="line">                    cv2.putText(frame, <span class="string">f&quot;<span class="subst">&#123;color_name.capitalize()&#125;</span> Laser - Distance: <span class="subst">&#123;distance:<span class="number">.2</span>f&#125;</span> cm&quot;</span>,</span><br><span class="line">                                (center[<span class="number">0</span>] - <span class="number">20</span>, center[<span class="number">1</span>] - <span class="number">20</span>),</span><br><span class="line">                                cv2.FONT_HERSHEY_SIMPLEX, <span class="number">0.5</span>, color, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Display the image</span></span><br><span class="line">    cv2.imshow(<span class="string">&quot;Laser Pointer Detection&quot;</span>, frame)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Exit on key press</span></span><br><span class="line">    <span class="keyword">if</span> cv2.waitKey(<span class="number">1</span>) &amp; <span class="number">0xFF</span> == <span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Release resources</span></span><br><span class="line">cap.release()</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+            </div>
+            <!-- read more -->
+            
+                <div class="abstract-read-more-button">
+                    <a href="/2024/10/28/27/">
+                        <span style="margin-right: 0.2rem;">READ ARTICLE</span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/10/28">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2024/10/28</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="口水鸡真的很营养啊">口水鸡真的很营养啊</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2024/06/25/26/">
                 
                 <span class="abstract-title-text">重大的变化应该用平淡的语言诉说</span>
@@ -1086,7 +1130,32 @@
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1287,7 +1356,7 @@
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 27
+        Total : 28
         </div>
         <!-- search  -->
         
@@ -1301,6 +1370,12 @@
             <div class="archive-year"> 2024 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span>
+            <a class="archive-post-title" href="/2024/10/28/27/">Code for Winter Hacker</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">06/25</span>
